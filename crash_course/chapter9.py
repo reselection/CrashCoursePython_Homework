@@ -304,3 +304,65 @@ my_tesla.battery.battery_upgrade()
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
 '''
+
+#9-10, 9-11, 9-12. just importing stuff for these exercises
+# import Restaurant as EC
+
+#9-13. Dice
+import random
+class Dice:
+
+    def __init__(self):
+        self.dice = 6
+
+    def roll_die(self=False): # I needed False here, why??
+        '''prints a random number between 1 to 6'''
+        print(random.randrange(1,6))
+
+    def ten_sided_dice(self=False):
+        '''prints a random number between 1 to 10'''
+        print(random.randrange(1,10))
+
+    def twenty_sided_dice(self=False):
+        '''prints a random number between 1 to 20'''
+        print(random.randrange(1,20))
+'''
+gamble = Dice
+
+for roll in range(20):  # rolling the dice 20 times here
+    gamble.ten_sided_dice()
+'''
+
+#9-14. Lottery
+
+lottery_list = (1,2,3,4,5,6,7,9,10,'a', 'b','c', 'd', 'e')
+#for num in range(4):
+    #winning_ticket.append(random.choice(lottery_list))
+
+#print(f"The jackpot combination is: {winning_ticket}")
+
+
+#9-15. Lottery Analysis
+my_ticket = [10, 2, 6, 'a']
+attempts = 0
+
+while True:
+    winning_ticket = random.choices(lottery_list, k=4) # k=4, it will create a list with 4 elements
+    if winning_ticket != my_ticket:
+        attempts += 1 # If we didn't win we add an attempt to attempts.
+        print(f"{random.choices(lottery_list, k=4)} attempt:{attempts})")# This is here just to show progress
+    elif winning_ticket == my_ticket: # If our ticket matches the winning ticket: execute below.
+        print(f"You won with ticket:{my_ticket}.\nIt only took {attempts} attempts....")
+        break # Need to break the code after so it doesn't keep going.
+
+# Making this code work was actually really hard! took me maybe 30mins to 1 hour to make this work.
+# Despite this taking forever to create for such a small piece of code, i feel like i learned alot.
+# I even got forced to research the random module, a fun challenge!
+
+#9-16. Python Module of the Week
+'''
+Currently learning the os module, socket and sys.
+A very cool resource with alot of example code to test.
+Even modules for mail services? this is insane!
+Decided to use this when learning modules, its very usefull.
+'''
